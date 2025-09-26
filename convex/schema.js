@@ -47,4 +47,23 @@ export default defineSchema({
     .index('by_published', ['status', 'publishedAt'])
     .index('by_author_status', ['authorId', 'status'])
     .searchIndex('search_content', { searchField: 'title' }),
+
+  comments: defineTable({
+    postId: v.id('posts'),
+    authorId: v.optional(v.id('users')), // Optional for anonymous comments
+    authorName: v.string(), // For anonymous or display name
+    authorEmail: v.optional(v.string()), // For anonymous comments
+
+    content: v.string(),
+    status: v.union(
+      v.literal('approved'),
+      v.literal('pending'),
+      v.literal('rejected')
+    ),
+
+    createdAt: v.number(),
+  })
+    .index('by_post', ['postId'])
+    .index('by_post_status', ['postId', 'status'])
+    .index('by_author', ['authorId']),
 });
