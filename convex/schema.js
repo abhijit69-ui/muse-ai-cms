@@ -88,4 +88,17 @@ export default defineSchema({
     .index('by_follower', ['followerId'])
     .index('by_following', ['followingId'])
     .index('by_relationship', ['followerId', 'followingId']), // Prevent duplicates
+
+  // Daily analytics tracking
+  dailyStats: defineTable({
+    postId: v.id('posts'),
+    date: v.string(), // YYYY-MM-DD format for easy querying
+    views: v.number(),
+
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index('by_post', ['postId'])
+    .index('by_date', ['date'])
+    .index('by_post_date', ['postId', 'date']), // Unique constraint
 });
