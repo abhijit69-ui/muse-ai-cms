@@ -48,6 +48,7 @@ export default defineSchema({
     .index('by_author_status', ['authorId', 'status'])
     .searchIndex('search_content', { searchField: 'title' }),
 
+  // Comments
   comments: defineTable({
     postId: v.id('posts'),
     authorId: v.optional(v.id('users')), // Optional for anonymous comments
@@ -66,4 +67,25 @@ export default defineSchema({
     .index('by_post', ['postId'])
     .index('by_post_status', ['postId', 'status'])
     .index('by_author', ['authorId']),
+
+  likes: defineTable({
+    postId: v.id('posts'),
+    userId: v.optional(v.id('users')), // Optional for anonymous likes
+
+    createdAt: v.number(),
+  })
+    .index('by_post', ['postId'])
+    .index('by_user', ['userId'])
+    .index('by_post_user', ['postId', 'userId']), // Prevent duplicate likes
+
+  // Follow/Subscribe system (combines following and newsletter subscription)
+  follows: defineTable({
+    followerId: v.id('users'), // User doing the following
+    followingId: v.id('users'), // User being followed
+
+    createdAt: v.number(),
+  })
+    .index('by_follower', ['followerId'])
+    .index('by_following', ['followingId'])
+    .index('by_relationship', ['followerId', 'followingId']), // Prevent duplicates
 });
