@@ -54,12 +54,12 @@ export default function Hero() {
 
         <div>
           <Image
-            src='/banner.png'
+            src='/hero.png'
             alt='Banner vector image'
             width={500}
             height={700}
             priority
-            className='w-full max-h-[36.3rem] object-contain'
+            className='w-full h-auto object-contain'
           />
         </div>
       </div>
