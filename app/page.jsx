@@ -1,5 +1,6 @@
 import CursorAnimation from '@/components/cursor-effect';
 import Features from '@/components/sections/features';
+import GlobalStats from '@/components/sections/globalstats';
 import Hero from '@/components/sections/hero';
 import PlatformTabs from '@/components/sections/platform-tabs';
 import { Button } from '@/components/ui/button';
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Features />
       <PlatformTabs />
+      <GlobalStats />
     </div>
   );
 }
