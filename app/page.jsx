@@ -3,7 +3,7 @@ import Features from '@/components/sections/features';
 import GlobalStats from '@/components/sections/globalstats';
 import Hero from '@/components/sections/hero';
 import PlatformTabs from '@/components/sections/platform-tabs';
-import { Button } from '@/components/ui/button';
+import Testimonials from '@/components/sections/testimonials';
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Features />
       <PlatformTabs />
       <GlobalStats />
+      <Testimonials />
     </div>
   );
 }
