@@ -3,7 +3,7 @@ import { socialProofStats } from '@/lib/data';
 export default function GlobalStats() {
   return (
     <section
-      className='relative mt-14 z-10 py-16 sm:py-24 px-4 sm:px-6
+      className='relative z-10 py-16 sm:py-24 px-4 sm:px-6
     bg-gradient-to-r from-gray-900/50 to-purple-900/20'
     >
       <div className='max-w-7xl mx-auto text-center'>

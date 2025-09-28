@@ -1,5 +1,7 @@
 import CursorAnimation from '@/components/cursor-effect';
+import Cta from '@/components/sections/cta';
 import Features from '@/components/sections/features';
+import Footer from '@/components/sections/footer';
 import GlobalStats from '@/components/sections/globalstats';
 import Hero from '@/components/sections/hero';
 import PlatformTabs from '@/components/sections/platform-tabs';
@@ -15,6 +17,8 @@ export default function Home() {
       <PlatformTabs />
       <GlobalStats />
       <Testimonials />
+      <Cta />
+      <Footer />
     </div>
   );
 }
