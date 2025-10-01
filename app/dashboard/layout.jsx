@@ -124,7 +124,7 @@ export default function DashboardLayout({ children }) {
             <Button
               variant='outline'
               size='sm'
-              className='w-full justify-start text-slate-300 hover:text-white rounded-xl p-4'
+              className='cursor-pointer w-full justify-start text-slate-300 hover:text-white rounded-xl p-4'
             >
               <Settings className='h-4 w-4 mr-2' />
               Settings
@@ -141,7 +141,7 @@ export default function DashboardLayout({ children }) {
                 variant='ghost'
                 size='icon'
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className='lg:hidden'
+                className='cursor-pointer lg:hidden'
               >
                 <Menu className='h-5 w-5' />
               </Button>
