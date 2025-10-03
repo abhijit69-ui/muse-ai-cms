@@ -78,7 +78,7 @@ export const updateUsername = mutation({
     }
 
     if (args.username !== user.username) {
-      const existingUser = ctx.db
+      const existingUser = await ctx.db
         .query('users')
         .withIndex('by_username', (q) => q.eq('username', args.username))
         .unique();
